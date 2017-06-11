@@ -24,7 +24,9 @@ const HEROES:Hero[]=[
   <h1>{{title}}</h1>
   <h2>My Heroes</h2>
   <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+    <li *ngFor="let hero of heroes"     
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)" >
       <span class="badge">{{hero.id}}</span>{{hero.name}}
       <!-- each hero goes here -->
     </li>
@@ -57,7 +59,7 @@ const HEROES:Hero[]=[
       height:1.6em;
       border-radius:4px;
     }
-    .heroes li.selected:hover {
+    .heroes li.selected {
       background-color:#BBD8DC !important;
       color:white;
     }
