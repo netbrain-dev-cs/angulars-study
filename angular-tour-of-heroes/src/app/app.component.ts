@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Hero{
-  id:number;
-  name:string;
-}
+import {Hero} from './hero';
 
 const HEROES:Hero[]=[
   {id:11,name:'Mr.Nice'},
@@ -20,7 +17,7 @@ const HEROES:Hero[]=[
 
 @Component({
   selector: 'app-root',
-  template: `
+  template:`
   <h1>{{title}}</h1>
   <h2>My Heroes</h2>
   <ul class="heroes">
@@ -31,57 +28,10 @@ const HEROES:Hero[]=[
       <!-- each hero goes here -->
     </li>
   </ul>
-  <div *ngIf="selectedHero">
-    <h2>{{selectedHero.name}} details</h2>
-    <div><label>id:</label>{{selectedHero.id}}</div>
-    <div>
-      <label>name:</label>
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </div>
-  </div>
+  <hero-detail [hero]="selectedHero"></hero-detail>
   `,
-  styles:[`
-    .selected:{
-      background-color:#CFD8DC !important;
-      color:white;
-    }
-    .heroes {
-      margin:0 0 2em 0;
-      padding:0;
-      width:15em;
-    }
-    .heroes li {
-      cursor:pointer;
-      position:relative;
-      left:0;
-      background-color:#EEE;
-      margin:.5em;
-      height:1.6em;
-      border-radius:4px;
-    }
-    .heroes li.selected {
-      background-color:#BBD8DC !important;
-      color:white;
-    }
-    .heroes li:hover {
-      color:#607D8B;
-      background-color:#DDD;
-      left:.lem;
-    }
-    .heroes .badge {
-      display:inline-block;
-      font-size:small;
-      color:white;
-      padding:0.8em 0.7em 0 0.7em;
-      background-color:#607D8B;
-      line-height:lem;
-      position:relative;
-      left:-1px;
-      top:-4px;
-      height:1.8em;
-      border-radius:4px 0 0 4px;
-    }
-  `]
+  //templateUrl:'./app.component.html',
+  styleUrls:['./app.component.css'],
 })
 export class AppComponent {
   title = 'Tour of Heroes';
