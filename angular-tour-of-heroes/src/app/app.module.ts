@@ -8,11 +8,13 @@ import { HeroService} from './hero.service';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent} from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
+import { DashboardComponent} from './dashboard.component';
 
 @NgModule({  
   declarations: [
     AppComponent,
     HeroDetailComponent,
+    DashboardComponent,
     HeroesComponent
   ],
   imports: [
@@ -22,6 +24,10 @@ import { HeroesComponent } from './heroes.component';
       {
         path:'heroes',
         component:HeroesComponent
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent
       }
     ])
   ],
