@@ -20,7 +20,7 @@ import {HeroService} from './hero.service';
   `,
   //templateUrl:'./app.component.html',
   styleUrls:['./heroes.component.css'],
-  providers:[HeroService]
+  providers:[]
 })
 export class HeroesComponent implements OnInit{
   heroes : Hero[];
